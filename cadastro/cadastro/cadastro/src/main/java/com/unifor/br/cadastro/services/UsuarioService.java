@@ -21,6 +21,7 @@ public class UsuarioService {
         }
     }
 
+    @SuppressWarnings("deprecation")
     public Usuario getUsuario(long id){
         return  repository.getById(id);
     }

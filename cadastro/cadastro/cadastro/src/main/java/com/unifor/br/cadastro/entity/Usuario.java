@@ -1,8 +1,17 @@
 package com.unifor.br.cadastro.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Usuario {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private int id;
+    
     private String userName;
     private String email;
     private boolean status;
@@ -22,40 +31,29 @@ public class Usuario {
     public int getId() {
         return id;
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getUserName() {
         return userName;
     }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getEmail() {
         return email;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public boolean isStatus() { // Para boolean, o padrão é "is" em vez de "get"
+    public boolean isStatus() { 
         return status;
     }
-
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     public String getSenha() {
         return senha;
     }
 
-    public void setSenha(String senha) {
-        this.senha = senha;
+
+    public void setUserName(String userName) { 
+        this.userName = userName; }
+    public void setEmail(String email) { 
+        this.email = email; }
+    public void setSenha(String senha) { 
+        this.senha = senha; }
+    public void setStatus(boolean status) { 
+        this.status = status; }
+    public void setId(int id) {
+        this.id = id;
     }
 }

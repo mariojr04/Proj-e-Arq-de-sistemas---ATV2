@@ -41,7 +41,6 @@ public class UsuarioController {
     @DeleteMapping("/deletar")
     public ResponseEntity<Void> deletarUsuario(@RequestParam("id") long id) {
         service.deletarUsuario(id);
-        // Retornamos 204 No Content, pois o objeto não existe mais
         return ResponseEntity.noContent().build();
     }
 
